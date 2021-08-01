@@ -4,3 +4,5 @@ plugins=(
   zsh-syncax-highlighting
 )
 
+alias ls="ls -l"
+

@@ -1,8 +1,12 @@
 import XMonad
 
--- This is the most basic possible setup
-main = xmonad def
-	{ terminal	= "alacritty"
-	, modMask	= mod4Mask
-	}
+xmobarRc = "~/.xmonad/xmobar.hs"
+	
+main = do
+	xmproc <- spawnPipe ("xmobar" ++ xmobarRc)
+	xmonad $ defaults
 
+defaults = defaultConfig {
+	terminal	= "alacritty"
+	modMask		= mod4Mask
+}
