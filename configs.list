@@ -1,0 +1,8 @@
+/etc/X11/xorg.conf.d/10-monitor.conf
+/etc/default/grub
+/etc/vconsole.conf
+/home/__usrname__/.ssh/config
+/home/__usrname__/.vim/.vimrc
+/home/__usrname__/.xmonad/xmonad.hs
+/home/__usrname__/.zshrc
+
