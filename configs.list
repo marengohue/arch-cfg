@@ -4,6 +4,7 @@
 /home/__usrname__/.ssh/config
 /home/__usrname__/.vim/.vimrc
 /home/__usrname__/.xmonad/xmonad.hs
+/home/__usrname__/.xmonad/xmobar.hs
 /home/__usrname__/.zshrc
 /home/__usrname__/.alacritty.yml
 
