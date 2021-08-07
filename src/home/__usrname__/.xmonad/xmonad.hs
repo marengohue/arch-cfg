@@ -9,13 +9,11 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Loggers
 
-xmobarRc = "~/.xmonad/xmobarrc"
-
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
 
 magentaHex = "#ff79c6"
 blueHex = "#bd93f9"
-whiteHex = "#f8f8f2"
+whiteHex = "#fafaff"
 yellowHex = "#f1fa8c"
 redHex = "#ff5555"
 lowWhiteHex = "#444444"
@@ -27,17 +25,18 @@ blue     = xmobarColor blueHex ""
 white    = xmobarColor whiteHex ""
 yellow   = xmobarColor yellowHex ""
 red      = xmobarColor redHex ""
-lowWhite = xmobarColor whiteHex ""
+lowWhite = xmobarColor lowWhiteHex ""
 
 prettyPrintCfg :: PP
 prettyPrintCfg = def
-    { ppSep                 = magenta " • "
+    { ppSep                 = "   "
     , ppTitleSanitize       = xmobarStrip
-    , ppCurrent             = wrap (blue "[") (blue "]")
-    , ppHidden              = white . wrap " " ""
+    , ppCurrent             = blue . wrap "<box type=Top>" "</box>"
+    , ppVisible             = wrap "<box type=Top>" "</box>"
+    , ppHidden              = wrap "" ""
     , ppHiddenNoWindows     = lowWhite . wrap " " ""
     , ppUrgent              = red . wrap (yellow "!") (yellow "!")
-    , ppOrder               = \[ws, l, win] -> [ws, l, win]
+    , ppOrder               = \[ws, _, win] -> [ws, win]
     }
   where
     ppWindow :: String -> String
