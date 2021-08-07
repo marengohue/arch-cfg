@@ -5,7 +5,9 @@
 /home/__usrname__/.ssh/config
 /home/__usrname__/.vimrc
 /home/__usrname__/.xmonad/xmonad.hs
-/home/__usrname__/.xmonad/xmobar.hs
+/home/__usrname__/.xmobarrc
 /home/__usrname__/.zshrc
 /home/__usrname__/.alacritty.yml
 /home/__usrname__/.config/powerline/config.json
+/etc/environment
+

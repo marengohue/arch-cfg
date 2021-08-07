@@ -15,3 +15,14 @@ python3 del powerline_setup
 set laststatus=2
 set showtabline=2
 
+" Enable line numbers
+set number
+
+" Start NERDTree when Vim is started without file arguments, close NERDTREE as last window
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Configure NERDTree
+
+let NERDTreeShowHidden=1
+
