@@ -9,33 +9,21 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Loggers
 
+import MarengoLilac(theme)
+import Theming(toXmobarTheme, ColorTheme(..))
+
+xmobarTheme = toXmobarTheme theme 
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
-
-magentaHex = "#ff79c6"
-blueHex = "#bd93f9"
-whiteHex = "#fafaff"
-yellowHex = "#f1fa8c"
-redHex = "#ff5555"
-lowWhiteHex = "#444444"
-blackHex = "#000000"
-
-blue, lowWhite, magenta, red, white, yellow :: String -> String
-magenta  = xmobarColor magentaHex ""
-blue     = xmobarColor blueHex ""
-white    = xmobarColor whiteHex ""
-yellow   = xmobarColor yellowHex ""
-red      = xmobarColor redHex ""
-lowWhite = xmobarColor lowWhiteHex ""
 
 prettyPrintCfg :: PP
 prettyPrintCfg = def
     { ppSep                 = "   "
     , ppTitleSanitize       = xmobarStrip
-    , ppCurrent             = blue . wrap "<box type=Top>" "</box>"
+    , ppCurrent             = (highlightDim xmobarTheme) . wrap "<box type=Top>" "</box>"
     , ppVisible             = wrap "<box type=Top>" "</box>"
     , ppHidden              = wrap "" ""
-    , ppHiddenNoWindows     = lowWhite . wrap " " ""
-    , ppUrgent              = red . wrap (yellow "!") (yellow "!")
+    , ppHiddenNoWindows     = (primaryDim xmobarTheme) . wrap " " ""
+    , ppUrgent              = (alarm xmobarTheme) . wrap ((warning xmobarTheme) "!") ((warning xmobarTheme) "!")
     , ppOrder               = \[ws, _, win] -> [ws, win]
     }
   where
@@ -50,7 +38,10 @@ main = xmonad
 
 resetXmonad = spawn "xmonad --recompile; killall xmobar; xmonad --restart"
 
-dmenuCmd = printf "dmenu_run -nb \"%s\" -fn \"xft:Iosevka SS08:size=12:style=Bold\" -sb \"%s\" -sf \"%s\"" blackHex blueHex blackHex
+dmenuCmd = printf "dmenu_run -nb \"%s\" -fn \"xft:Iosevka SS08:size=12:style=Bold\" -sb \"%s\" -sf \"%s\"" bgNormal bgSelected
+    where
+        bgNormal = (primaryInverted theme)
+        bgSelected = (highlightDim theme)
 
 extraKeys = [
     ("M-p", unGrab *> spawn "gscreenshot -cs"),
@@ -62,8 +53,8 @@ cfg = desktopConfig {
     terminal    = "alacritty",
     modMask     = mod4Mask,
     workspaces  = customWorkspaces,
-    normalBorderColor = lowWhiteHex,
-    focusedBorderColor = blueHex,
+    normalBorderColor = (primaryDim theme),
+    focusedBorderColor = (highlightDim theme),
     layoutHook  = avoidStruts $ layoutHook desktopConfig,
     handleEventHook = handleEventHook def <+> fullscreenEventHook
 } `additionalKeysP` extraKeys
