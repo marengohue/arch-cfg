@@ -1,0 +1,13 @@
+# Keyboard layouts
+setxkbmap no &
+fcitx5 &
+
+# Wallpaper
+nitrogen --restore &
+
+# Compositor
+picom -f &
+
+# Trayer
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --height 24 --tint 0x000000 --alpha 0x00 --monitor 1 &
+
