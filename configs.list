@@ -5,11 +5,16 @@
 /home/__usrname__/.ssh/config
 /home/__usrname__/.vimrc
 /home/__usrname__/.xmonad/xmonad.hs
-/home/__usrname__/.xmonad/xmobar.hs
+/home/__usrname__/.xmonad/primary-xmobarrc
+/home/__usrname__/.xmonad/secondary-xmobarrc
 /home/__usrname__/.xmonad/lib/MarengoLilac.hs
 /home/__usrname__/.xmonad/lib/Theming.hs
+/home/__usrname__/.xmonad/lib/XMobar/Bar.hs
+/home/__usrname__/.xmonad/lib/XMobar/Primary.hs
+/home/__usrname__/.xmonad/lib/XMobar/Secondary.hs
 /home/__usrname__/.zshrc
 /home/__usrname__/.alacritty.yml
 /home/__usrname__/.config/powerline/config.json
+/home/__usrname__/.config/spotifyd/spotifyd.conf
 /etc/environment
 

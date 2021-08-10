@@ -6,7 +6,7 @@ Config {
        , bgColor = "black"
        , fgColor = "grey"
        , alpha = 255
-       , position = TopW L 95 
+       , position = Top
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -21,8 +21,6 @@ Config {
                        "--normal","green","--high","red",
                        "-t", "<fn=2>\xf2db</fn>: <total>%"] 10
             , Run Memory ["-t","<fn=2>\xf538</fn>: <usedratio>%"] 10
-		   -- , Run Wireless ["-t", "<fn=2>\xf079</fn>: <usedratio>%"] 10 
-            , Run Date "%a %Y-%m-%d <fc=#bd93f9><fn=2>\xf017</fn> %H:%M</fc>" "date" 10 
             , Run Com "whoami" [] "" 36000
             , Run Com "cat" [ "/etc/hostname" ] "hostname" 3600
             , Run UnsafeStdinReader
@@ -30,6 +28,6 @@ Config {
          ]  
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %personIcon% %whoami%@%hostname%> %UnsafeStdinReader% }{| %cpu%  %memory% | %date% |"
+       , template = " %personIcon% %whoami%@%hostname%> %UnsafeStdinReader% }{| %cpu%  %memory% |"
        }
 

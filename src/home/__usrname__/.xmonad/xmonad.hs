@@ -12,33 +12,22 @@ import XMonad.Util.Loggers
 import MarengoLilac(theme)
 import Theming(toXmobarTheme, ColorTheme(..))
 
-xmobarTheme = toXmobarTheme theme 
+import XMobar.Primary(primaryCfg, primaryIdx, primaryRc)
+import XMobar.Secondary(secondaryCfg, secondaryIdx, secondaryRc)
+
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
 
-prettyPrintCfg :: PP
-prettyPrintCfg = def
-    { ppSep                 = "   "
-    , ppTitleSanitize       = xmobarStrip
-    , ppCurrent             = (highlightDim xmobarTheme) . wrap "<box type=Top>" "</box>"
-    , ppVisible             = wrap "<box type=Top>" "</box>"
-    , ppHidden              = wrap "" ""
-    , ppHiddenNoWindows     = (primaryDim xmobarTheme) . wrap " " ""
-    , ppUrgent              = (alarm xmobarTheme) . wrap ((warning xmobarTheme) "!") ((warning xmobarTheme) "!")
-    , ppOrder               = \[ws, _, win] -> [ws, win]
-    }
-  where
-    ppWindow :: String -> String
-    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
-    
 main = xmonad
      . ewmh
-    =<< (statusBar "xmobar ~/.xmonad/xmobar.hs" prettyPrintCfg toggleStrutsKey) cfg
+    =<< (statusBar (printf "xmobar %s -x %d" primaryRc primaryIdx) primaryCfg toggleStrutsKey)
+    =<< (statusBar (printf "xmobar %s -x %d" secondaryRc secondaryIdx) secondaryCfg toggleStrutsKey) 
+    cfg
   where
     toggleStrutsKey XConfig{ modMask = m} = (m, xK_b)
 
 resetXmonad = spawn "xmonad --recompile; killall xmobar; xmonad --restart"
 
-dmenuCmd = printf "dmenu_run -nb \"%s\" -fn \"xft:Iosevka SS08:size=12:style=Bold\" -sb \"%s\" -sf \"%s\"" bgNormal bgSelected
+dmenuCmd = printf "dmenu_run -nb \"%s\" -fn \"xft:Iosevka SS08:size=12:style=Bold\" -sb \"%s\" -sf \"%s\"" bgNormal bgSelected bgNormal
     where
         bgNormal = (primaryInverted theme)
         bgSelected = (highlightDim theme)
