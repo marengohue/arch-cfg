@@ -18,4 +18,9 @@
 /home/__usrname__/.config/powerline/config.json
 /home/__usrname__/.config/spotifyd/spotifyd.conf
 /etc/environment
+/home/__usrname__/.emacs.d/init.el
+/home/__usrname__/.emacs.d/indent.el
+/home/__usrname__/.emacs.d/package.el
+/home/__usrname__/.emacs.d/counsel.el
+/home/__usrname__/.emacs.d/rust-mode.el
 

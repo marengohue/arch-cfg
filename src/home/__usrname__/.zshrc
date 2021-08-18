@@ -17,3 +17,7 @@ alias ls="ls -l"
 alias vi="vim"
 alias vim="vim"
 
+# Setup AWS stuff
+alias aws="docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli"
+export ECR=885729917217.dkr.ecr.eu-north-1.amazonaws.com
+
