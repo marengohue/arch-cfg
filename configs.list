@@ -22,7 +22,7 @@
 /home/__usrname__/.emacs.d/indent.el
 /home/__usrname__/.emacs.d/package.el
 /home/__usrname__/.emacs.d/counsel.el
-/home/__usrname__/.emacs.d/rust-mode.el
+/home/__usrname__/.emacs.d/autocomplete.el
 /home/__usrname__/.emacs.d/modeline.el
 /home/__usrname__/.emacs.d/which-key.el
 /home/__usrname__/.emacs.d/projectile.el
