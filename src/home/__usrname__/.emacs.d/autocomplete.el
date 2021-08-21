@@ -41,7 +41,9 @@
   :custom
   (lsp-ui-peek-always-show t)
   (lsp-ui-sideline-show-hover t)
-  (lsp-ui-doc-enable nil))
+  (lsp-ui-doc-enable nil)
+  :bind
+  ("C-c r" . lsp-ui-sideline-apply-code-actions))
 
 (use-package company
   :ensure
