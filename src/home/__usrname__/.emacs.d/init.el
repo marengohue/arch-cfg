@@ -10,6 +10,7 @@
 (load-cfg "autocomplete")
 (load-cfg "which-key")
 (load-cfg "projectile")
+(load-cfg "org")
 
 ;; We are ready, man!
 (message "Welcome back!")
@@ -19,7 +20,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(rustic flycheck lsp-ui lsp-mode ivy-rich rich-ivy rainbow-delimiters which-ley projectile mood-line company use-package counsel)))
+   '(haskell-mode terraform-mode treemacs-projectile treemacs rustic flycheck lsp-ui lsp-mode ivy-rich rich-ivy rainbow-delimiters which-ley projectile mood-line company use-package counsel)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

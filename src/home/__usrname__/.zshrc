@@ -21,3 +21,6 @@ alias vim="vim"
 alias aws="docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli"
 export ECR=885729917217.dkr.ecr.eu-north-1.amazonaws.com
 
+# Restart spotifyd on TUI launch - otherwise it wont work
+alias spt="systemctl restart --user spotifyd; spt"
+

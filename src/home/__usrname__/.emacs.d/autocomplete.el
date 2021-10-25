@@ -17,6 +17,7 @@
 
   ;; comment to disable rustfmt on save
   (setq rustic-format-on-save t)
+  (setq rustic-format-trigger 'on-save)
   (add-hook 'rustic-mode-hook 'rustic-mode-hook))
 
 (defun rustic-mode-hook ()
@@ -33,6 +34,8 @@
   (lsp-eldoc-render-all t)
   (lsp-idle-delay 0.6)
   (lsp-rust-analyzer-server-display-inlay-hints t)
+  (lsp-rust-analyzer-display-parameter-hints)
+  (lsp-rust-analyzer-max-inlay-hint-length 15)
   (lsp-rust-server 'rust-analyzer)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
@@ -40,7 +43,7 @@
 (use-package lsp-ui
   :custom
   (lsp-ui-peek-always-show t)
-  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-sideline-show-hover nil)
   (lsp-ui-doc-enable nil)
   :bind
   ("C-c r" . lsp-ui-sideline-apply-code-actions))
@@ -52,3 +55,4 @@
 
 (use-package flycheck)
 
+(use-package haskell-mode)

@@ -25,9 +25,10 @@ Config {
             , Run Com "cat" [ "/etc/hostname" ] "hostname" 3600
             , Run UnsafeStdinReader
             , Run Com "echo" [ "<fn=2>\xF007</fn>" ] "personIcon" 3600
+            , Run Date "%a %Y-%m-%d <fc=#bd93f9><fn=2>\xf017</fn> %H:%M</fc>" "date" 10 
          ]  
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %personIcon% %whoami%@%hostname%> %UnsafeStdinReader% }{| %cpu%  %memory% |"
+       , template = " %personIcon% %whoami%@%hostname%> %UnsafeStdinReader% }{ %date% | %cpu%  %memory% |"
        }
 

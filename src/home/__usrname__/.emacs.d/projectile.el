@@ -18,3 +18,10 @@
   :config
   (counsel-projectile-mode 1))
 
+(use-package treemacs)
+
+(use-package treemacs-projectile
+  :config
+  (treemacs-project-follow-mode)
+  (treemacs-display-current-project-exclusively)
+  :after (treemacs projectile))

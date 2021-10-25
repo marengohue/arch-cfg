@@ -8,12 +8,17 @@ import XMonad.Util.EZConfig(additionalKeysP)
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Loggers
+import XMonad.Hooks.ManageDocks
 
 import MarengoLilac(theme)
 import Theming(toXmobarTheme, ColorTheme(..))
 
 import XMobar.Primary(primaryCfg, primaryIdx, primaryRc)
 import XMobar.Secondary(secondaryCfg, secondaryIdx, secondaryRc)
+import XMonad.Layout.NoBorders
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.Spacing(smartSpacingWithEdge)
 
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
 
@@ -36,7 +41,15 @@ extraKeys = [
     ("M-p", unGrab *> spawn "gscreenshot -cs"),
     ("M-S-p", spawn "gscreenshot -c"),
     ("M-d", spawn dmenuCmd), 
-    ("M-q", resetXmonad) ]
+    ("M-q", resetXmonad)
+    ]
+
+layoutCfg = avoidStruts $ lessBorders Screen $ tiled ||| noBorders Full
+  where
+    tiled = lessBorders Screen $ smartSpacingWithEdge 5 $ ResizableTall nmaster delta ratio []
+    nmaster = 1
+    ratio = 1/2
+    delta = 3/100
 
 cfg = desktopConfig {
     terminal    = "alacritty",
@@ -44,6 +57,7 @@ cfg = desktopConfig {
     workspaces  = customWorkspaces,
     normalBorderColor = (primaryDim theme),
     focusedBorderColor = (highlightDim theme),
-    layoutHook  = avoidStruts $ layoutHook desktopConfig,
-    handleEventHook = handleEventHook def <+> fullscreenEventHook
+    layoutHook  = smartBorders $ toggleLayouts(noBorders Full) $ layoutCfg,
+    handleEventHook = handleEventHook def <+> fullscreenEventHook,
+    manageHook = manageDocks
 } `additionalKeysP` extraKeys
