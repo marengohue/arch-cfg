@@ -17,7 +17,7 @@
 			"theme": "default"
 		},
 		"shell": {
-			"colorscheme": "default",
+			"colorscheme": "horizon",
 			"theme": "default",
 			"local_themes": {
 				"continuation": "continuation",

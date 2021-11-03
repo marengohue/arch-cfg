@@ -6,7 +6,7 @@ fcitx5 &
 nitrogen --restore &
 
 # Compositor
-picom -f &
+picom --fading --fade-delta=5 &
 
 # Trayer
 trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --height 24 --tint 0x000000 --alpha 0x00 --monitor 1 &
