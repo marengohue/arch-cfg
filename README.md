@@ -1,4 +1,4 @@
-# Marengo's Archcfg Repo
+# Marengo's .files
 Yeah, it's basically all of my text config. Storing it to not lose and cut down on the amount of configuration necessary later down the line.
 
 ## Remarks
