@@ -18,7 +18,7 @@ import XMobar.Secondary(secondaryCfg, secondaryIdx, secondaryRc)
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.ToggleLayouts
-import XMonad.Layout.Spacing(smartSpacingWithEdge)
+import XMonad.Layout.Spacing(spacingRaw, Border(..))
 
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
 
@@ -46,7 +46,8 @@ extraKeys = [
 
 layoutCfg = avoidStruts $ lessBorders Screen $ tiled ||| noBorders Full
   where
-    tiled = lessBorders Screen $ smartSpacingWithEdge 5 $ ResizableTall nmaster delta ratio []
+    tiled = lessBorders Screen $ spacing $ ResizableTall nmaster delta ratio []
+    spacing = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
     nmaster = 1
     ratio = 1/2
     delta = 3/100

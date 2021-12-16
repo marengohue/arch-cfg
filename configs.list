@@ -25,7 +25,9 @@
 /home/__usrname__/.emacs.d/modeline.el
 /home/__usrname__/.emacs.d/indent.el
 /home/__usrname__/.emacs.d/counsel.el
-/home/__usrname__/.emacs.d/autocomplete.el
+/home/__usrname__/.emacs.d/lsp.el
+/home/__usrname__/.emacs.d/rust.el
+/home/__usrname__/.emacs.d/fsharp.el
 /home/__usrname__/.emacs.d/which-key.el
 /home/__usrname__/.emacs.d/projectile.el
 /home/__usrname__/.emacs.d/org.el
