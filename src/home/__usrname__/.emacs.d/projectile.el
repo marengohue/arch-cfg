@@ -10,8 +10,7 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  (when (file-directory-p "~/src")
-    (setq projectile-project-search-path '("~/src")))
+  (setq projectile-auto-discover nil)
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
