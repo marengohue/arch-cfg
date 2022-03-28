@@ -8,6 +8,7 @@
 
 (use-package rustic
   :ensure
+  :hook (rustic-mode . lsp-deferred)
   :bind (:map rustic-mode-map
               ("M-j" . lsp-ui-imenu)
               ("M-?" . lsp-find-references)
@@ -25,5 +26,4 @@
 
   ;; comment to disable rustfmt on save
   (setq rustic-format-on-save t)
-  (setq rustic-format-trigger 'on-save)
-  (add-hook 'rustic-mode-hook 'custom/rustic-mode-hook . lsp-deferred))
+  (setq rustic-format-trigger 'on-save))
