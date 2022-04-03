@@ -1,6 +1,6 @@
 Config { 
        font = "xft:Iosevka SS08:style=Bold:size=11"
-       , additionalFonts = [ "xft:Font Awesome 5 Free-12", "xft:Font Awesome 5 Free Solid-12", "xft:Font Awesome 5 Brands-12" ]
+       , additionalFonts = [ "xft:Font Awesome 6 Free-12", "xft:Font Awesome 6 Free Solid-12", "xft:Font Awesome 6 Brands-12" ]
        , borderColor = "black"
        , border = TopB
        , bgColor = "black"
