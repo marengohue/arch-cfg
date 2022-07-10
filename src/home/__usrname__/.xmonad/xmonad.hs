@@ -23,6 +23,7 @@ import XMonad.Layout.Spacing(spacingRaw, Border(..))
 customWorkspaces = [ "main", "web", "steam" ] ++ [ "4", "5", "6" ]
 
 main = xmonad
+     . ewmhFullscreen
      . ewmh
     =<< (statusBar (printf "xmobar %s -x %d" primaryRc primaryIdx) primaryCfg toggleStrutsKey)
     =<< (statusBar (printf "xmobar %s -x %d" secondaryRc secondaryIdx) secondaryCfg toggleStrutsKey) 
@@ -59,6 +60,5 @@ cfg = desktopConfig {
     normalBorderColor = (primaryDim theme),
     focusedBorderColor = (highlightDim theme),
     layoutHook  = smartBorders $ toggleLayouts(noBorders Full) $ layoutCfg,
-    handleEventHook = handleEventHook def <+> fullscreenEventHook,
     manageHook = manageDocks
 } `additionalKeysP` extraKeys

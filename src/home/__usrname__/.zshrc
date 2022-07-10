@@ -24,3 +24,7 @@ export ECR=885729917217.dkr.ecr.eu-north-1.amazonaws.com
 # Restart spotifyd on TUI launch - otherwise it wont work
 alias spt="systemctl restart --user spotifyd; spt"
 
+# Aliases for F#
+alias fsi="dotnet fsi --readline-"
+alias fsc="dotnet fsc"
+
