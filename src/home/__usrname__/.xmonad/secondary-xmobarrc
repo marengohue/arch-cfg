@@ -6,7 +6,7 @@ Config {
        , bgColor = "#1c1e26"
        , fgColor = "#c7c9cb"
        , alpha = 255
-       , position = TopH 24
+       , position = TopH 25
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
