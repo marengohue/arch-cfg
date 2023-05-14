@@ -9,5 +9,4 @@ nitrogen --restore &
 picom --fading --fade-delta=5 &
 
 # Trayer
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --height 24 --tint 0x000000 --alpha 0x00 --monitor 1 &
-
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --height 25 --tint 0x1c1e26 --alpha 0x00 --monitor 1 &

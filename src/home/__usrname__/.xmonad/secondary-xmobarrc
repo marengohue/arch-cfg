@@ -1,12 +1,12 @@
 Config { 
-       font = "xft:Iosevka SS08:style=Bold:size=11"
+       font = "Iosevka SS08 12"
        , additionalFonts = [ "xft:Font Awesome 6 Free-12", "xft:Font Awesome 6 Free Solid-12", "xft:Font Awesome 6 Brands-12" ]
        , borderColor = "black"
        , border = TopB
-       , bgColor = "black"
-       , fgColor = "grey"
+       , bgColor = "#1c1e26"
+       , fgColor = "#c7c9cb"
        , alpha = 255
-       , position = Top
+       , position = TopH 24
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True

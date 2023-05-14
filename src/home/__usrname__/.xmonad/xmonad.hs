@@ -33,10 +33,12 @@ main = xmonad
 
 resetXmonad = spawn "xmonad --recompile; killall xmobar; xmonad --restart"
 
-dmenuCmd = printf "dmenu_run -nb \"%s\" -fn \"xft:Iosevka SS08:size=12:style=Bold\" -sb \"%s\" -sf \"%s\"" bgNormal bgSelected bgNormal
+dmenuCmd = printf "dmenu_run -p \"λ >\" -nb \"%s\" -fn \"Iosevka SS08:size=12.5\" -sb \"%s\" -sf \"%s\"" bgNormal bgSelected fgSelected
     where
-        bgNormal = (primaryInverted theme)
-        bgSelected = (highlightDim theme)
+        bgNormal = (barBg theme)
+        fgSelected = (barFgSelected theme)
+        bgSelected = (barBgSelected theme)
+        
 
 extraKeys = [
     ("M-p", unGrab *> spawn "gscreenshot -cs"),

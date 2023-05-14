@@ -101,7 +101,7 @@
       "trigger": "-copy"
     },
     {
-      "key": "alt-b",
+      "key": "alt-w",
       "trigger": "copy"
     },
     {
@@ -375,6 +375,62 @@
     {
       "key": "ctrl-g",
       "trigger": "-next-occurrence"
+    },
+    {
+      "key": "ctrl-shift-k",
+      "trigger": "-show-goto-action-panel"
+    },
+    {
+      "key": "alt-x",
+      "trigger": "show-goto-action-panel"
+    },
+    {
+      "key": "alt-f1",
+      "trigger": "workspace-tree/show-in-files"
+    },
+    {
+      "key": "ctrl-space",
+      "trigger": "set-caret-with-selection"
+    },
+    {
+      "key": "ctrl-space",
+      "trigger": "-completion"
+    },
+    {
+      "key": "shift-ctrl-space",
+      "trigger": "completion"
+    },
+    {
+      "key": "ctrl-w",
+      "trigger": "-close-tab"
+    },
+    {
+      "key": "ctrl-x ctrl-k",
+      "trigger": "close-tab"
+    },
+    {
+      "key": "ctrl-x k",
+      "trigger": "close-tab"
+    },
+    {
+      "key": "return",
+      "trigger": "new-line"
+    },
+    {
+      "key": "return",
+      "trigger": "-wrap-line"
+    },
+    {
+      "key": "numpadenter",
+      "trigger": "-wrap-line"
+    },
+    {
+      "key": "shift-return",
+      "trigger": "-wrap-line"
+    },
+    {
+      "key": "shift-numpadenter",
+      "trigger": "-wrap-line"
     }
   ]
 }
