@@ -41,8 +41,6 @@ dmenuCmd = printf "dmenu_run -p \"λ >\" -nb \"%s\" -fn \"Iosevka SS08:size=12.5
         
 
 extraKeys = [
-    ("M-p", unGrab *> spawn "gscreenshot -cs"),
-    ("M-S-p", spawn "gscreenshot -c"),
     ("M-d", spawn dmenuCmd), 
     ("M-q", resetXmonad)
     ]

@@ -1,0 +1,40 @@
+live_config_reload = true
+
+[colors.cursor]
+cursor = "#e95678"
+text = "CellBackground"
+
+[colors.primary]
+background = "#1c1e26"
+bright_foreground = "#eaeaea"
+foreground = "#c7c9cb"
+
+[cursor]
+thickness = 0.15
+
+[font]
+size = 13
+
+[font.bold]
+family = "Iosevka Term SS08"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka Term SS08"
+style = "Bold Italic"
+
+[font.italic]
+family = "Iosevka Term SS08"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Term SS08"
+style = "light"
+
+[shell]
+args = ["--login"]
+program = "/usr/bin/zsh"
+
+[window.padding]
+x = 0
+y = 0
